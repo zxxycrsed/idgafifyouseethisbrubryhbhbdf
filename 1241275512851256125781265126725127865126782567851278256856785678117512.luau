@@ -1,3 +1,85 @@
+if not LPH_OBFUSCATED then
+	LPH_ENCSTR = function(value)
+		return value
+	end
+	LPH_STRENC = function(value)
+		return value
+	end
+
+	LPH_ENCNUM = function(value)
+		return value
+	end
+	LPH_NUMENC = function(value)
+		return value
+	end
+
+	LPH_JIT = function(Function)
+		return Function
+	end
+	LPH_JIT_MAX = function(Function)
+		return Function
+	end
+
+	LPH_NO_VIRTUALIZE = function(Function)
+		return Function
+	end
+
+	if buffer then
+		local FromString = buffer.fromstring
+
+		LPH_ENCBUF = function(value)
+			return FromString(value)
+		end
+		LPH_BUFENC = function(value)
+			return FromString(value)
+		end
+	end
+
+	LPH_CRASH = function() end
+
+	LPH_PRECHECK = function(check)
+		check()
+	end
+
+	local NoAttr = function() end
+
+	LPH_ATTRIBUTES = NoAttr
+
+	ENCRYPT = NoAttr
+	VM = NoAttr
+	PRESET = NoAttr
+	OPTIMIZE = NoAttr
+	ERROR_HANDLING = NoAttr
+
+	INLINE = NoAttr
+	NO_UPVALUES = NoAttr
+
+	UNROLL = NoAttr
+
+	TRANSFORM = NoAttr
+
+	EXTRACT = NoAttr
+	CONTROL_FLOW = NoAttr
+	REWRITE_NAMECALLS = NoAttr
+
+	GLOBALS = NoAttr
+	CONSTANTS = NoAttr
+
+	NONE = NoAttr
+	OPAL = NoAttr
+	ONYX = NoAttr
+
+	FAST = NoAttr
+	BALANCED = NoAttr
+	SECURE = NoAttr
+
+	LRM_IsUserPremium = true
+	LRM_LinkedDiscordID = "Developer"
+	LRM_ScriptName = "ScriptName"
+	LRM_TotalExecutions = 0
+	LRM_SecondsLeft = 999999
+	LRM_UserNote = "user"
+end
 
 local GetGlobalEnv = ...
 local Deps = GetGlobalEnv.FlohackDeps
